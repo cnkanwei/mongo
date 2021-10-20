@@ -5,7 +5,7 @@
 ## Install
 
 ``` bash
-$ go get -u -v gopkg.in/go-oauth2/mongo.v3
+$ go get -u -v github.com/cnkanwei/mongo.v4
 ```
 
 ## Usage
