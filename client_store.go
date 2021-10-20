@@ -2,8 +2,8 @@ package mongo
 
 import (
 	"github.com/globalsign/mgo"
-	"gopkg.in/oauth2.v3"
-	"gopkg.in/oauth2.v3/models"
+	"github.com/go-oauth2/oauth2/v4"
+	"github.com/go-oauth2/oauth2/v4/models"
 )
 
 // ClientConfig client configuration parameters
@@ -50,7 +50,7 @@ type ClientStore struct {
 	session *mgo.Session
 }
 
-// Close close the mongo session
+// Close the mongo session
 func (cs *ClientStore) Close() {
 	cs.session.Close()
 }
@@ -66,7 +66,7 @@ func (cs *ClientStore) cHandler(name string, handler func(c *mgo.Collection)) {
 	return
 }
 
-// Set set client information
+// Set client information
 func (cs *ClientStore) Set(info oauth2.ClientInfo) (err error) {
 	cs.cHandler(cs.ccfg.ClientsCName, func(c *mgo.Collection) {
 		entity := &client{
