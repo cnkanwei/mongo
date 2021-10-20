@@ -1,4 +1,4 @@
-module github.com/cnkanwei/mongo.v4
+module github.com/cnkanwei/mongo
 
 go 1.16
 
